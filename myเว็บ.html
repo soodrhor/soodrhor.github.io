@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personal Landing Page</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0d1117;
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --glass-border: rgba(255, 255, 255, 0.15);
+      --text-main: #e6edf3;
+      --text-muted: #8b949e;
+      --accent: #2ecc71;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Kanit', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #161b22, #0d1117);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    /* ===== Layout ===== */
+    .container {
+      display: flex;
+      gap: 24px;
+      padding: 24px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    aside {
+      flex: 0 0 28%;
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      gap: 24px;
+    }
+
+    /* ===== Glass Card ===== */
+    .card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    /* ===== Sidebar ===== */
+    .profile {
+      text-align: center;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .profile h2 {
+      font-weight: 600;
+    }
+
+    .profile p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin: 6px 0 14px;
+    }
+
+    .social a {
+      display: inline-block;
+      margin: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(46, 204, 113, 0.15);
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: 0.3s;
+    }
+
+    .social a:hover {
+      background: var(--accent);
+      color: #000;
+    }
+
+    /* ===== Main Content ===== */
+    h3 {
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .about p {
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      font-size: 0.85rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .project {
+      transition: transform 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+    }
+
+    .project h4 {
+      margin-bottom: 6px;
+    }
+
+    .project p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== Activity ===== */
+    .stats {
+      display: flex;
+      gap: 20px;
+    }
+
+    .stat {
+      flex: 1;
+      text-align: center;
+    }
+
+    .stat strong {
+      font-size: 1.6rem;
+      color: var(--accent);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+
+      aside {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="card profile">
+      <img src="img/soodrhor.jpg" class="avatar" alt="Avatar">
+      <h2>ภาณุวิชญ์ ขันธวิชัย</h2>
+      <p>Frontend Developer | UI Lover</p>
+
+      <div class="social">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Portfolio</a>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main>
+      <section class="card about">
+        <h3>👋 About Me</h3>
+        <p>
+          ผมเป็นนักพัฒนา Frontend ที่ชื่นชอบการออกแบบ UI/UX
+          สนใจการสร้างเว็บที่ดูสะอาด ทันสมัย และใช้งานง่าย
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>🛠 Skills</h3>
+        <div class="skills">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">UI/UX</span>
+          <span class="skill">Responsive Design</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>📦 Projects</h3>
+        <div class="projects">
+          <div class="card project">
+            <h4>Landing Page</h4>
+            <p>Modern responsive landing page design</p>
+          </div>
+          <div class="card project">
+            <h4>Dashboard UI</h4>
+            <p>Stylized dashboard with glassmorphism</p>
+          </div>
+          <div class="card project">
+            <h4>Mini App</h4>
+            <p>Vanilla JS interactive application</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>📊 Activity</h3>
+        <div class="stats">
+          <div class="stat">
+            <strong>42</strong>
+            <div>Repositories</div>
+          </div>
+          <div class="stat">
+            <strong>128</strong>
+            <div>Commits</div>
+          </div>
+          <div class="stat">
+            <strong>12</strong>
+            <div>Projects</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // ตัวอย่าง JS เผื่อขยายต่อ
+    console.log("Landing Page Loaded 🚀");
+  </script>
+
+</body>
+</html>
